@@ -1,6 +1,9 @@
 ## Overview:
 A collection of the assignments I submitted during the my Master’s in Computational Finance. Those that are independent of the question’s set are illustrated by a *.
 
+> **Warning** <br>
+> Please be aware that I __strongly advise__ you do not copy them as you will almost undoubtedly trigger the plagiarism protocols in place.
+
 ## Contents:
 - `Numerical Methods for Finance` (COMP0043)
   - _Mid-Term Q1 & Q2_
@@ -13,9 +16,7 @@ A collection of the assignments I submitted during the my Master’s in Computat
 ## Note:
 Dear reader,
 
-This is simply a repository of some of the assignments I undertook during my time on the Master’s Programme: MSc Computational Finance, at UCL. It does not include those that required handwritten answers, as they would be far too specific and perhaps difficult to follow in places. In truth, I do not expect them to be of much interest to the average reader as some of them answer a set of questions which I have not provided – as it would be inappropriate to do so.
-
-Please be aware that I __strongly advise__ you do not copy them as you will almost undoubtedly trigger the plagiarism protocols in place, I merely hope they will offer an idea of what is expected. 
+This is simply a repository of some of the assignments I undertook during my time on the Master’s Programme: MSc Computational Finance, at UCL. It does not include those that required handwritten answers, as they would be far too specific and perhaps difficult to follow in places. In truth, I do not expect them to be of much interest to the average reader as some of them answer a set of questions which I have not provided – as it would be inappropriate to do so, I merely hope they will offer an idea of what is expected. 
 
 H ✌️
 
