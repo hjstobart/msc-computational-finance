@@ -9,7 +9,9 @@ A collection of the assignments I submitted during the my Master’s in Computat
   - _Mid-Term Q1 & Q2_
   - _Summer Assessment Q2 & Q3_
 - `*Data Science` (COMP0047)
+  - _Coursework_
 - `Market Microstructure` (COMP0049)
+  - _Coursework_
 - `*Machine Learning with Applications in Finance` (COMP0050)
 - `Numerical Optimisation` (COMP0120)
 
