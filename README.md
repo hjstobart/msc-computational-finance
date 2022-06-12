@@ -13,6 +13,9 @@ A collection of the assignments I submitted during the my Master’s in Computat
 - `Market Microstructure` (COMP0049)
   - _Coursework_
 - `*Machine Learning with Applications in Finance` (COMP0050)
+  - _Coursework Q1_
+  - _Coursework Q2_
+  - _Coursework (Combined)_
 - `Numerical Optimisation` (COMP0120)
 
 ## Note:
