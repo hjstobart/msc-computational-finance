@@ -1,5 +1,5 @@
 ## Overview:
-A collection of the assignments I submitted during the my Master’s in Computational Finance. Those that are independent of the question’s set are illustrated by a *.
+A collection of the assignments I submitted during the my Master’s in Computational Finance. Those that are independent of the question’s set are illustrated by a **.
 
 > **Warning** <br>
 > Please be aware that I __strongly advise__ you do not copy them as you will almost undoubtedly trigger the plagiarism protocols in place.
@@ -8,15 +8,17 @@ A collection of the assignments I submitted during the my Master’s in Computat
 - `Numerical Methods for Finance` (COMP0043)
   - _Mid-Term Q1 & Q2_
   - _Summer Assessment Q2 & Q3_
-- `*Data Science` (COMP0047)
+- `Data Science **` (COMP0047)
   - _Coursework_
 - `Market Microstructure` (COMP0049)
   - _Coursework_
-- `*Machine Learning with Applications in Finance` (COMP0050)
+- `Machine Learning with Applications in Finance **` (COMP0050)
   - _Coursework Q1_
   - _Coursework Q2_
   - _Coursework (Combined)_
 - `Numerical Optimisation` (COMP0120)
+  - _Coursework 1_
+  - _Coursework 2_
 
 ## Note:
 Dear reader,
