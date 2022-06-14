@@ -6,8 +6,10 @@ A collection of the assignments I submitted during the my Master’s in Computat
 
 ## Contents:
 - `Numerical Methods for Finance` (COMP0043)
-  - _Mid-Term Q1 & Q2_
-  - _Summer Assessment Q2 & Q3_
+  - _Mid-Term Q1_
+  - _Mid-Term Q2_
+  - _Summer Assessment Q2_
+  - _Summer Assessment Q3_
 - `Data Science **` (COMP0047)
   - _Coursework_
 - `Market Microstructure` (COMP0049)
