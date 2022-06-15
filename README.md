@@ -5,6 +5,8 @@ A collection of the assignments I submitted during the my Master’s in Computat
 > Please be aware that I __strongly advise__ you do not copy them as you will almost undoubtedly trigger the plagiarism protocols in place.
 
 ## Contents:
+- `General Purpose`
+  - _Itô Formulae_
 - `Numerical Methods for Finance` (COMP0043)
   - _Mid-Term Q1_
   - _Mid-Term Q2_
