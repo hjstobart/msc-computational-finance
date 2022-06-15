@@ -1,0 +1,206 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.2in]{geometry} 
+\usepackage{amsmath}
+\usepackage{tcolorbox}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{accents}
+\usepackage{parskip}
+\pagestyle{fancy}
+\setlength{\headheight}{40pt}
+%\linespread{1.3}
+
+\begin{document}
+
+\lhead{Mr. \textsc{H. Stobart}} 
+\rhead{\textsc{COMP0048 Financial Engineering}}
+\cfoot{\thepage\ of \pageref{LastPage}}
+
+\begin{tcolorbox}
+\begin{center}
+    \large
+    \textsc{Itô Formulae for Stochastic Calculus} 
+\end{center}
+\end{tcolorbox}
+
+%\begin{center}
+%\textbf{Note:} \textit{This work is intended for informative and educational purposes only.}
+%\end{center}
+
+\section*{Introduction:}
+Throughout what follows, assume $W_t$ is a standard Wiener Process (otherwise known as a Brownian Motion) with the following properties:
+
+\begin{enumerate}
+    \item $W_0 = 0$;
+    \item The process $W_t$ has independent increments. That is, for $ t_0 < t_1 \leq t_2 < t_3$, we have $W_{t_3} - W_{t_2}$ and $W_{t_1} - W_{t_0}$ are independent random variables;
+    \item The process has Gaussian increments. That is, for $s < t$, we have $W_t - W_s \sim \mathcal{N}(0,|t-s|)$;
+    \item The process $W_t$ has continuous paths. 
+\end{enumerate}
+
+\vspace{0.5cm}
+
+% ====================
+%   ---ITO ONE---
+% ====================
+
+\section*{1.1. Itô Formula I: Differential Form}
+
+\begin{equation}
+    dF(W_t) = \frac{dF}{dW_t} dW_t + \frac{1}{2} \frac{d^2 F}{dW_t^{2}}.
+\end{equation}
+
+\textbf{Q: When do I use it?} \\
+\textbf{A:} When we have $F = F(W_t)$ which depends on $W_t$ only. 
+
+\textbf{Q: How do I derive this?} \\
+\textbf{A:} Write the Taylor expansion of $F(W_t + dW_t)$ up to second order and note that $dW_t^{2} = dt$. 
+
+\vspace{1cm}
+
+\section*{1.2. Itô Formula I: Integral Form}
+
+\begin{equation}
+    \int_{0}^{t} \frac{dF}{dW_s} dW_s = F(W_t) - F(W_0) - \frac{1}{2} \int_{0}^{t}  \frac{d^{2} F}{dW_s^{2}} ds.
+\end{equation}
+
+\textbf{Q: When do I use it?} \\
+\textbf{A:} When we have $F = F(W_t)$ which depends on $W_t$ only and we are required to work in integral form. 
+
+\textbf{Q: How do I derive this?} \\
+\textbf{A:} Rearrange (1) and integrate between 0 and $t$, note the use of the dummy variable $s$.
+
+\newpage
+
+% ====================
+%   ---ITO TWO---
+% ====================
+
+\section*{2.1. Itô Formula II: Differential Form}
+
+\begin{equation}
+    dF(t, W_t) = \left(\frac{\partial F}{\partial t} + \frac{1}{2} \frac{\partial^{2} F}{\partial W_t^{2}}\right) dt + \frac{\partial F}{\partial W_t} dW_t.
+\end{equation}
+
+\textbf{Q: When do I use it?} \\
+\textbf{A:} When we have $F = F(t, W_t)$ which now depends on both $t$ and $W_t$. 
+
+\textbf{Q: How do I derive this?} \\
+\textbf{A:} Write the Taylor expansion of $F(t+dt, W_t + dW_t)$ up to first order in $t$ and second order in $W_t$, and note that $dW_t^{2} = dt$. 
+
+\vspace{1cm}
+
+\section*{2.2. Itô Formula II: Integral Form}
+
+\begin{equation}
+    \int_{0}^{t} \frac{\partial F}{\partial W_s} dW_s = F(t, W_t) - F(0, W_0) - \int_{0}^{t} \left(\frac{\partial F}{ds} + \frac{1}{2} \frac{\partial^{2} F}{\partial W_s^{2}}\right) ds.
+\end{equation}
+
+\textbf{Q: When do I use it?} \\
+\textbf{A:} When we have $F = F(t, W_t)$ which now depends on both $t$ and $W_t$ and we are required to write it in integral form.
+
+\textbf{Q: How do I derive this?} \\
+\textbf{A:} Rearrange (3) and integrate between 0 and $t$, note the use of the dummy variable $s$.
+
+\vspace{1cm}
+
+% ====================
+%   ---ITO THREE---
+% ====================
+
+\section*{3. Itô Formula III}
+Suppose we now have an additional SDE given by:
+
+\begin{equation*}
+    dS = \mu S dt + \sigma S dW_t.
+\end{equation*}
+
+And we wish to find $V = V(S)$, a function of $S$. Then Itô III is:
+
+\begin{equation}
+    dV(S) = \left(\mu S \frac{dV}{dS} + \frac{1}{2} \sigma^2 S^2 \frac{d^{2} V}{d S^{2}}\right) dt + \sigma S \frac{dV}{dS} dW_t.    
+\end{equation}
+
+\textbf{Q: When do I use it?} \\
+\textbf{A:} When we have $V = V(S)$ which depends on another SDE given by $S$.
+
+\textbf{Q: How do I derive this?} \\
+\textbf{A:} Perform a Taylor expansion of $V(S+dS)$ up to second order and then substitute in the value for $dS$ where it appears, noting that higher orders of $dt$ such as $dt^{\frac{3}{2}}$ and $dt^2$ get ignored.   
+
+\newpage
+
+% ====================
+%   ---ITO FOUR---
+% ====================
+
+\section*{4. Itô Formula IV}
+Suppose we have $dS$ as before and we wish to find $V = V(t,S)$, a function of both $t$ and $S$ now. Then Itô IV is:
+
+\begin{equation}
+    dV(t,S) = \left( \frac{\partial V}{\partial t} + \mu S \frac{\partial V}{\partial S} + \frac{1}{2} \sigma^2 S^2 \frac{\partial^{2} V}{\partial S^{2}}\right) dt + \sigma S \frac{\partial V}{\partial S} dW_t.    
+\end{equation}
+
+\textbf{Q: When do I use it?} \\
+\textbf{A:} When we have $V = V(t, S)$ which depends on $t$ and another SDE given by $S$.
+
+\textbf{Q: How do I derive this?} \\
+\textbf{A:} Perform a Taylor expansion of $V(t+dt, S+dS)$ up to first order in $t$ and second order in $S$. Then substitute in the value for $dS$ where it appears, noting that higher orders of $dt$ such as $dt^{\frac{3}{2}}$ and $dt^2$ get ignored.   
+
+\vspace{1cm}
+
+% ====================
+%   ---ITO FIVE---
+% ====================
+
+\section*{5. Itô Formula V: General Itô}
+Suppose we have some $G_t$ that satisfies the SDE given by:
+\begin{equation*}
+    dG_t = A(t, G_t) dt + B(t, G_t) dW_t.
+\end{equation*}
+
+Now let $F = F(t, G_t)$ depend on both $t$ and $G_t$. Then Itô V, otherwise known as the general Itô formula, is:
+
+\begin{equation}
+    dF(t,G_t) = \left( \frac{\partial F}{\partial t} + A(t,G_t) \frac{\partial F}{\partial G_t} + \frac{1}{2} B^2(t,G_t) \frac{\partial^{2} F}{\partial G_t^{2}}\right) dt + B(t,G_t) \frac{\partial F}{\partial G_t} dW_t.    
+\end{equation}
+
+\textbf{Q: When do I use it?} \\
+\textbf{A:} When we have $F = F(t, G_t)$ which depends on $t$ and another SDE given by $G_t$.
+
+\textbf{Q: How do I derive this?} \\
+\textbf{A:} Perform a Taylor expansion of $F(t+dt, G_t+dG_t)$ up to first order in $t$ and second order in $G_t$. Then substitute in the value for $dG_t$ where it appears, noting that higher orders of $dt$ such as $dt^{\frac{3}{2}}$ and $dt^2$ get ignored. Also note, this is simply the more general form of Itô IV given above. 
+
+\newpage
+
+% ====================
+%   ---ITO SIX---
+% ====================
+
+\section*{6. Itô Formula VI: Higher Dimensional Itô}
+Suppose we now have a multi-factor model, depending on two SDE's given by:
+\begin{equation*}
+        dS_1 = \mu_1 S_1 dt + \sigma_1 S_1 dW_t,
+\end{equation*}
+and
+\begin{equation*}
+        dS_2 = \mu_2 S_2 dt + \sigma_2 S_2 dW_t.
+\end{equation*}
+
+Suppose the following correlation also exists:
+\begin{equation*}
+    \mathbb{E} [dW_t^{(1)} dW_t^{(2)}] = \rho dt.
+\end{equation*}
+Then Itô VI is:
+
+\begin{multline}
+    dV(t,S_1,S_2) = \\ \left( \frac{\partial V}{\partial t} + \mu_1 S_1 \frac{\partial V}{\partial S_1} + \mu_2 S_2 \frac{\partial V}{\partial S_2} + \frac{1}{2} \sigma_1^{2} S_1^{2} \frac{\partial^{2} V}{\partial S_1^{2}} + \frac{1}{2} \sigma_2^{2} S_2^{2} \frac{\partial^{2} V}{\partial S_2^{2}} + \rho \sigma_1 \sigma_2 S_1 S_2 \frac{\partial^2 V}{\partial S_1 \partial S_2}\right) dt + \\ \sigma_1 S_1 \frac{\partial V}{\partial S_1} dW_t^{(1)} + \sigma_2 S_2 \frac{\partial V}{\partial S_2} dW_t^{(2)}.   
+\end{multline}
+
+\textbf{Q: When do I use it?} \\
+\textbf{A:} When we have $V = V(t, S_1, S_2)$ which depends on $t$ and two more SDE's given by $S_1$ and $S_2$ to form a multi-factor model.
+
+\textbf{Q: How do I derive this?} \\
+\textbf{A:} Perform a Taylor expansion of $V(t+dt, S_1+dS_1, S_2 + dS_2)$ up to first order in $t$ and second order in $S_1$ and $S_2$, remembering to include the mixed partial term of the product of the two SDE's. Then substitute in the value for $dS_1$ and $dS_2$ where they appears, noting that higher orders of $dt$ such as $dt^{\frac{3}{2}}$ and $dt^2$ get ignored. And of course, don't get screwed by the algebra...
+
+\end{document}
