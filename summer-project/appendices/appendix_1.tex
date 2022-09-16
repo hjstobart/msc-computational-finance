@@ -1,0 +1,217 @@
+
+\section{Discrete Compounding}
+\label{append_A1}
+To illustrate the use of the formulas presented in Chapter 2, we present some numerical examples based on the data provided in \cite{smith2011bond}. For simplicity, we will ignore the additional challenges posed by day count conventions and assume a 30/360 calendar.
+
+Consider the following table for reference. 
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{cccccc}
+
+\toprule
+\textsc{Forward} & \textsc{Forward} & \textsc{Spot} & \textsc{Spot} & \textsc{Discount} \\
+\textsc{Period} & \textsc{Rates} & \textsc{Period} & \textsc{Rates} & \textsc{Factors}\\
+\toprule
+
+0 $\times$ 3 & 0.500\% & 0 $\times$ 3 & 0.5000\% & 0.998751561 \\
+3 $\times$ 6 & 1.582\% & 0 $\times$ 6 & 1.0406\% & 0.994817233 \\
+6 $\times$ 9 & 2.669\% & 0 $\times$ 9 & 1.5827\% & 0.988223069 \\
+9 $\times$ 12 & 3.765\% & 0 $\times$ 12 & 2.1272\% & 0.979007831 \\
+12 $\times$ 15 & 3.747\% & 0 $\times$ 15 & 2.4506\% & 0.969922559 \\
+15 $\times$ 18 & 4.405\% & 0 $\times$ 18 & 2.7757\% & 0.959357293 \\
+18 $\times$ 21 & 5.069\% & 0 $\times$ 21 & 3.1025\% & 0.947352265 \\
+21 $\times$ 24 & 5.743\% & 0 $\times$ 24 & 3.4316\% & 0.933943555 \\
+\toprule
+
+\end{tabular}
+\end{center}
+\caption[Numerical Example--Discrete Compounding Formulas]{A table of forward rates, spot rates, and discount factors given on a quarterly compounded (30/360) basis.}
+\label{tab:numerical_ex_1}
+\end{table}
+
+\newpage 
+
+\subsection{Discrete spot rates from discrete forward rates}
+
+Given a series of forward rates, we can compute the discrete spot rates.
+
+\textbf{Example:}
+\begin{align}
+    \left( 1 + \frac{r_d(3M)]}{4}\right) \left( 1 + \frac{f_d(0,3M,6M)}{4} \right) &= \left( 1 + \frac{r_d(6M)}{4} \right)^2 \\[6pt]
+    \left( 1 + \frac{0.00500}{4}\right) \left( 1 + \frac{0.01582}{4} \right) &= \left( 1 + \frac{r_d(6M)}{4} \right)^2 \\[6pt]
+    r_d(6M) &= 0.010406 \\
+    &= 1.0406\%.
+\end{align}
+
+\subsection{Discount factors from discrete spot rates}
+
+We can compute discount factors given a set of discrete spot rates.
+
+\textbf{Example:}
+\begin{align}
+    Z(0,15M) &= \frac{1}{\left( 1 + \frac{r_d(15M)}{4} \right)^5}  \\[6pt]
+    Z(0,15M) &= \frac{1}{\left( 1 + \frac{0.024506}{4} \right)^5} \\[6pt]
+    Z(0,15M) &= 0.969922559.
+\end{align}
+
+\subsection{Discrete forward rates from discount factors}
+
+We can compute the discrete forward rates given a set of discount factors.
+
+\textbf{Example:}
+\begin{align}
+    f_d(0,18M,21M) &= \frac{\left( \frac{Z(0,18M)}{Z(0,21M)} - 1 \right)}{21M - 18M} \\[6pt]
+    f_d(0,18M,21M) &= \frac{\left( \frac{0.959357293}{0.947352265} - 1 \right)}{0.25} \\[6pt]
+    f_d(0,18M,21M) &= 0.05069 \\
+    &= 5.069\%.
+\end{align}
+
+\newpage
+
+\section{Continuous Compounding}
+\label{append_A2}
+
+\subsection{Continuous spot rates}
+
+Suppose we have the discrete spot rates given in Table \ref{tab:numerical_ex_1}. Then we can convert them to continuously compounded spot rates.
+
+\textbf{Example:}
+\begin{align}
+    r_c(9M) &= \frac{1}{9M} \ln \left( 1 + (9M) r_d(9M)  \right) \\[6pt]
+    r_c(9M) &= \frac{1}{0.75} \ln \left( 1 + (0.75)(0.015827) \right) \\[6pt]
+    r_c(9M) &= 0.015796 \\
+    &= 1.5796\%.
+\end{align}
+
+Suppose we have the following table, with all data now presented on a continuous basis.
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{cccccc}
+
+\toprule
+\textsc{Forward} & \textsc{Forward} & \textsc{Spot} & \textsc{Spot} & \textsc{Discount} \\
+\textsc{Period} & \textsc{Rates} & \textsc{Period} & \textsc{Rates} & \textsc{Factors}\\
+\toprule
+
+0 $\times$ 3 & 0.4997\% & 0 $\times$ 3 & 0.4997\% & 0.998751561 \\
+3 $\times$ 6 & 1.5788\% & 0 $\times$ 6 & 1.0392\% & 0.994817233 \\
+6 $\times$ 9 & 2.6602\% & 0 $\times$ 9 & 1.5796\% & 0.988223069 \\
+9 $\times$ 12 & 3.7475\% & 0 $\times$ 12 & 2.1216\% & 0.979007831 \\
+12 $\times$ 15 & 3.7294\% & 0 $\times$ 15 & 2.4431\% & 0.969922559 \\
+15 $\times$ 18 & 4.3811\% & 0 $\times$ 18 & 2.7661\% & 0.959357293 \\
+18 $\times$ 21 & 5.0370\% & 0 $\times$ 21 & 3.0905\% & 0.947352265 \\
+21 $\times$ 24 & 5.7020\% & 0 $\times$ 24 & 3.4170\% & 0.933943555 \\
+\toprule
+
+\end{tabular}
+\end{center}
+\caption[Numerical Example--Continuous Compounding Formulas]{A table of spot rates, forward rates, and discount rates given on a continuously compounded basis. Derived from the data given in \cite{smith2011bond}.}
+\label{tab:numerical_ex_2}
+\end{table}
+
+\subsection{Discount factors from continuous spot rates}
+
+We can compute discount factors given a set of continuous spot rates.
+
+\textbf{Example:}
+\begin{align}
+    Z(0,18M) &= \exp ( -r_c(18M) (18M) ) \\[6pt]
+    Z(0,18M) &= e^{-(0.027761)(1.5)} \\[6pt]
+    Z(0,18M) &= 0.959357293.
+\end{align}
+
+\subsection{Continuous forward rates from discount factors}
+
+We can compute the continuous forward rates given a set of discount factors.
+
+\textbf{Example:}
+\begin{align}
+    f_c(0,9M,12M) &= \frac{\ln \left( \frac{Z(0,9M)}{Z(0,12M)} \right)}{12M - 9M} \\[6pt]
+    f_c(0,9M,12M) &= \frac{\left( \frac{0.988223069}{0.979007831} \right)}{0.25} \\[6pt]
+    f_c(0,9M,12M) &= 0.037475 \\
+    &= 3.7475\%.
+\end{align}
+
+\section{Computing a Swap Price}
+\label{append_A3}
+To illustrate the formulas used to compute the swap fixed rate, which is equivalent to the price of a swap, we present a numerical example based on that given in \cite{smith2011bond}.
+
+\subsection{Using discount factors only}
+
+Suppose we have the discretely compounded spot rates and discount factors given in table \ref{tab:numerical_ex_1}. Selectively repeated here for the comfort of the reader.
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{ccc}
+
+\toprule
+\textsc{Spot} & \textsc{Spot} & \textsc{Discount} \\
+\textsc{Period} & \textsc{Rates} & \textsc{Factors}\\
+\toprule
+
+0 $\times$ 3 & 0.5000\% & 0.998751561 \\
+0 $\times$ 6 & 1.0406\% & 0.994817233 \\
+0 $\times$ 9 & 1.5827\% & 0.988223069 \\
+0 $\times$ 12 & 2.1272\% & 0.979007831 \\
+0 $\times$ 15 & 2.4506\% & 0.969922559 \\
+0 $\times$ 18 & 2.7757\% & 0.959357293 \\
+0 $\times$ 21 & 3.1025\% & 0.947352265 \\
+0 $\times$ 24 & 3.4316\% & 0.933943555 \\
+\toprule
+
+\end{tabular}
+\end{center}
+\caption[Numerical Example--Swap Pricing using Discount Factors]{The repeated table of spot rates and discount rates given on a quarterly compounded (30/360) basis.}
+\label{tab:numerical_ex_3}
+\end{table}
+
+\textbf{Example:}
+We want to compute the swap fixed rate, $r_s$, of a two year, quarterly paid plain vanilla fixed-for-floating swap. 
+
+\begin{align}
+    r_s &= \frac{1 - Z(0,24M)}{\tau \sum_{i = 3M}^{24M} Z(0, i)} \\[6pt]
+    &= \frac{0.066056445}{1.942843842} \\
+    &= 0.033999873 \\
+    &= 3.40\%.
+\end{align}
+
+\subsection{Using forward rates and discount factors}
+
+Suppose we have the discretely compounded forward rates and discount factors given in table \ref{tab:numerical_ex_1}. Selectively repeated here for the comfort of the reader.
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{ccccc}
+
+\toprule
+\textsc{Forward} & \textsc{Forward} & \textsc{Spot} & \textsc{Discount} \\
+\textsc{Period} & \textsc{Rates} & \textsc{Period} & \textsc{Factors}\\
+\toprule
+
+0 $\times$ 3 & 0.500\% & 0 $\times$ 3 & 0.998751561 \\
+3 $\times$ 6 & 1.582\% & 0 $\times$ 6 & 0.994817233 \\
+6 $\times$ 9 & 2.669\% & 0 $\times$ 9 & 0.988223069 \\
+9 $\times$ 12 & 3.765\% & 0 $\times$ 12 & 0.979007831 \\
+12 $\times$ 15 & 3.747\% & 0 $\times$ 15 & 0.969922559 \\
+15 $\times$ 18 & 4.405\% & 0 $\times$ 18 & 0.959357293 \\
+18 $\times$ 21 & 5.069\% & 0 $\times$ 21 & 0.947352265 \\
+21 $\times$ 24 & 5.743\% & 0 $\times$ 24 & 0.933943555 \\
+\toprule
+
+\end{tabular}
+\end{center}
+\caption[Numerical Example--Swap Pricing using Forward Rates]{The repeated table of forward rates and discount rates given on a quarterly compounded (30/360) basis.}
+\label{tab:numerical_ex_4}
+\end{table}
+
+\textbf{Example:}
+Let's compute the same swap fixed rate (SFR) for a two year, quarterly paid plain vanilla fixed-for-floating swap.
+
+\begin{align}
+    r_s &= \frac{\sum_{i=3M}^{24M} Z(0,i) f_d(0,i-1,i)]}{\sum_{i = 3M}^{24M} Z(0, i)} \\[6pt]
+    &= \frac{0.264227437}{7.771375367} \\
+    &= 0.034000087 \\
+    &= 3.40\%.
+\end{align}
