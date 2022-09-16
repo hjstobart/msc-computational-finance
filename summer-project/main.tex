@@ -1,0 +1,111 @@
+% For two sided printing
+%\documentclass[11pt,a4paper,twoside]{book}
+% For one sided printing
+\documentclass[11pt,a4paper,oneside]{book}
+
+% Packages
+\usepackage{amsmath,amssymb,amsthm,color,enumerate,graphicx,stackrel,natbib,setspace,ifthen,url,array,pifont,eurosym,epigraph,booktabs,lscape,placeins,multirow,fancyhdr,emptypage,import,hyperref,doi,algorithm,algpseudocode}
+\usepackage[dvipsnames]{xcolor}
+\setlength{\epigraphwidth}{0.75\textwidth}
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{corollary}{Corollary}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+% For printing with binding
+%\usepackage[inner=4cm,outer=2cm,top=2.5cm,bottom=3cm]{geometry}
+% For pdf or printing without binding
+\usepackage[inner=3cm,outer=3cm,top=2.5cm,bottom=3cm]{geometry}
+\usepackage[sc]{titlesec}
+
+%\usepackage[toc,page]{appendix}
+%\usepackage[titletoc,title]{appendix}
+%\input{FloatSettings} % For things like figures and tables
+%\input{BibSettings}   % For bibliographies
+\linespread{1.3}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+\begin{document}
+\pagestyle{plain}
+
+%=====================================
+
+%%%%%%%%% BEGIN Front Matter %%%%%%%%%
+\frontmatter
+\import{Front_matter/}{title_page.tex}
+
+\clearpage 
+\newpage 
+
+\import{Front_matter/}{abstract.tex}
+\newpage 
+
+\import{Front_matter/}{acknowledgements.tex}
+\newpage
+
+% The table of contents, list of figures and list of tables go here
+\setcounter{tocdepth}{2} 
+% Setting this higher means you get contents entries for
+%  more minor section headers.
+\cleardoublepage
+\tableofcontents
+\cleardoublepage
+\listoffigures
+\cleardoublepage
+\listoftables
+%%%%%%%%% END Front Matter %%%%%%%%%
+
+%=====================================
+
+%%%%%%%%% BEGIN Main Matter %%%%%%%%%
+
+\mainmatter
+\chapter{Introduction}
+\import{Chapter_1/}{chapter_1.tex}
+
+\newpage
+\chapter{Background}
+\import{Chapter_2/}{chapter_2.tex}
+
+\newpage
+\chapter{Interest Rate Swaps}
+\import{Chapter_3/}{chapter_3.tex}
+
+\newpage
+\chapter{Crypto Interest Rate Swaps}
+\import{Chapter_4/}{chapter_4.tex}
+
+\newpage
+\chapter{Conclusion}
+\import{Chapter_5/}{chapter_5.tex}
+
+%%%%%%%%% END Main Matter %%%%%%%%%
+
+%=====================================
+
+%%%%%%%%% BEGIN Back Matter %%%%%%%%%
+
+%%%%%%%%%% BIBLIOGRAPHY %%%%%%%%%%
+\addcontentsline{toc}{chapter}{Bibliography} % adds a page number for the bibliography to the table of contents
+
+% Actually generates your bibliography.
+\bibliographystyle{source_files/ormsv080}
+\bibliography{Bibliography/bibliography.bib}
+
+%%%%%%%%%% APPENDIX %%%%%%%%%%
+\appendix
+\chapter{Numerical Examples}
+\import{Appendices/}{appendix_1.tex}
+
+\chapter{Curve Construction}
+\import{Appendices/}{appendix_2.tex}
+
+\chapter{Code Listing}
+\import{Appendices/}{appendix_3.tex}
+
+%%%%%%%%% END Back Matter %%%%%%%%%
+
+\end{document}
