@@ -1,0 +1,70 @@
+%Create a title page
+\begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
+	\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for horizontal lines, change thickness here
+	
+	\center % Centre everything on the page
+	%------------------------------------------------
+	%	Headings
+	%------------------------------------------------	
+	\textsc{\LARGE University College London}\\[1.5cm] % Main heading institution
+	
+	\textsc{\Large Department of Computer Science}\\[0.5cm] % Major heading department
+	
+	\textsc{\large A thesis submitted in partial fulfilment of the requirements for the degree of Master of Science in Computational Finance, University College London}\\[0.5cm] % Minor heading such as course title	
+	%------------------------------------------------
+	%	Title
+	%------------------------------------------------
+	\HRule\\[0.4cm]
+	\textsc{\huge Pricing Interest Rate Swaps in Traditional and Decentralised Finance}\\% Title of your document
+	\HRule\\[1.5cm]
+	%------------------------------------------------
+	%	Author and Supervisor
+	%------------------------------------------------
+	{\large\textit{Author}}\\
+	Mr. Harry \textsc{Stobart} % Your name
+	\vfill
+	\begin{minipage}{0.48\textwidth}
+		\begin{flushleft}
+			\large
+			\textit{Academic Supervisor}\\
+			Dr.\ Carolyn \textsc{Phelan}\\ % Supervisor's name
+			\textsc{Dept.\ of Computer Science}\\
+			\textsc{University College London}
+		\end{flushleft}
+	\end{minipage}
+	~% Fill in the next one for your industrial supervisor - if you do not have one put your second marker
+	\begin{minipage}{0.48\textwidth}
+		\begin{flushright}
+			\large
+			\textit{Industrial Supervisor}\\
+			Mr.\ Benjamin \textsc{Loveless}\\ % Supervisor's name
+			\textsc{Director, Head of Trading}\\%Department
+			\textsc{JIT Strategies}%Company name
+		\end{flushright}
+	\end{minipage}
+	%------------------------------------------------
+	%	Date
+	%------------------------------------------------	
+	\vfill\vfill\vfill % Position the date 3/4 down the remaining page	
+	
+	{\large\textit\today} % Date, change the \today to a set date if you want to be precise
+	
+	%------------------------------------------------
+	%	Logo
+	%------------------------------------------------
+       \includegraphics[width=0.2\textwidth]{ucl_logo.jpg}\\[1cm] % Include a department/university logo - this will require the graphicx package
+	%------------------------------------------------
+	%	Disclaimer
+	%------------------------------------------------
+	
+	% Uncomment one of the following statements as appropriate.
+	
+	 This dissertation is submitted in partial fulfilment of the MSc Computational Finance degree at UCL. It is substantially the result of my own work except where explicitly indicated in the text. The dissertation may be freely copied and distributed provided the source is explicitly acknowledged.
+
+	%Or if your project includes information that prevents it from being more widely circulated:
+	
+	% This dissertation is submitted as part requirement for the MSc ? degree at UCL. It is substantially the result of my own work except where explicitly 	indicated in the text. The dissertation will be distributed to the internal and external examiners, but thereafter may not be copied or distributed except 	with permission from the author.
+
+	%\vfill % Push the date up 1/4 of the remaining page
+	
+\end{titlepage}
