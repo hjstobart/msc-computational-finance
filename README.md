@@ -23,6 +23,8 @@ A collection of the assignments I submitted during the my Master’s in Computat
 - `Numerical Optimisation` (COMP0120)
   - _Coursework 1_
   - _Coursework 2_
+- `Summer Project` (COMP0077)
+  - _Pricing Interest Rate Swaps in Traditional and Decentralised Finance_
 
 ## Note:
 Dear reader,
